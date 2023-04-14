@@ -1,13 +1,14 @@
 import React from "react";
-
+import { Box, Text } from "@chakra-ui/react";
+import { theme } from "../../theme";
 const Menu = () => {
   return (
-    <div>
-      <div>Home</div>
-      <div>Projects</div>
-      <div>AboutMe</div>
-      <div>Contact</div>
-    </div>
+    <Box>
+      <Text color={theme.fontColors.main}>Home</Text>
+      <Text color={theme.fontColors.main}>Projects</Text>
+      <Text color={theme.fontColors.main}>AboutMe</Text>
+      <Text color={theme.fontColors.main}>Contact</Text>
+    </Box>
   );
 };
 

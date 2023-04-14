@@ -4,7 +4,8 @@ import { extendTheme } from '@chakra-ui/react'
 export const theme = extendTheme({
   colors: {
     bg1: '#07140e',
-    bg2: '#5da7a7'
+    bg2: '#5da7a7',
+    font: '#ffffff'
   },
   fonts: {
     body: "system-ui, sans-serif",
@@ -66,3 +67,5 @@ export const theme = extendTheme({
     widest: "0.1em",
   },
 });
+
+export default theme
