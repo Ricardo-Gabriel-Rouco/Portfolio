@@ -1,10 +1,17 @@
-import Landing, {  } from "./Views/Landing";
+import { Box } from "@chakra-ui/react";
+import Landing from '../src/Views/Landing'
+import {theme} from './theme'
+
 function App() {
 
   return (
-    <div className="App">
+    <Box
+    backgroundImage={`linear-gradient(to bottom right, ${theme.colors.bg1}, ${theme.colors.bg2})`}
+      minHeight="100vh"
+      minW="100vh"
+    >
       <Landing/>
-    </div>
+    </Box>
   )
 }
 
