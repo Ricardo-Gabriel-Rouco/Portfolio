@@ -1,13 +1,13 @@
 import React from "react";
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Link } from "@chakra-ui/react";
 import { theme } from "../../theme";
 const MainMenu = () => {
   return (
       <Flex  flexDirection='column' alignItems='center'>
-        <Text color={theme.fontColors.main}>Home</Text>
-        <Text color={theme.fontColors.main}>Projects</Text>
-        <Text color={theme.fontColors.main}>AboutMe</Text>
-        <Text color={theme.fontColors.main}>Contact</Text>
+        <Link color={theme.fontColors.main} marginBottom={'3rem'} fontSize={theme.fontSizes.lg}>Home</Link>
+        <Link color={theme.fontColors.main} marginBottom={'3rem'} fontSize={theme.fontSizes.lg}>Projects</Link>
+        <Link color={theme.fontColors.main} marginBottom={'3rem'} fontSize={theme.fontSizes.lg}>AboutMe</Link>
+        <Link color={theme.fontColors.main} marginBottom={'3rem'} fontSize={theme.fontSizes.lg}>Contact</Link>
       </Flex>
   );
 };
