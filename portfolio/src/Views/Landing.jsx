@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../components/Menu/menu";
+import MainMenu from "../components/Menu/Menu";
 import { Flex, Box } from "@chakra-ui/react";
 
 const Landing = () => {
@@ -11,7 +11,7 @@ const Landing = () => {
             {/* aca irian un par de boludces sobre mi */}
       </Box>
       <Box maxW="50%">
-        <Menu />
+        <MainMenu />
       </Box>
     </Flex>
   );
