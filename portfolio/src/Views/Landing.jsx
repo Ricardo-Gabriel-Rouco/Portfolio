@@ -12,7 +12,7 @@ const Landing = () => {
         <Card maxW="sm" backgroundColor={theme.colors.bg3}>
           <CardBody paddingTop={'1rem'} paddingBottom={'1rem'}>
             <Image src={image} maxH={"300px"} w={'250px'} objectFit={'cover'}/>
-            <Image src={logo} maxH={"200px"} maxW={"250px"} paddingTop={'1.5rem'} />
+            <Image src={logo} maxH={"200px"} w={"250px"} paddingTop={'1.5rem'} objectFit={'cover '}/>
           </CardBody>
         </Card>
         {/* aca irian un par de boludces sobre mi */}
