@@ -5,6 +5,7 @@ export const theme = extendTheme({
   colors: {
     bg1: '#07140e',
     bg2: '#5da7a7',
+    bg3: '#DDCECD',
     font: '#ffffff'
   },
   fonts: {
@@ -13,7 +14,9 @@ export const theme = extendTheme({
     mono: "Menlo, monospace",
   },
   fontColors:{
-    main: 'white'
+    main: 'white',
+    primary: '#DDCECD'
+
   },
   fontSizes: {
     xs: "0.75rem",
