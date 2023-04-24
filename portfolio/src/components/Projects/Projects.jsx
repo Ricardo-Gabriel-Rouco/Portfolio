@@ -55,7 +55,7 @@ function Projects() {
       >
         {/* Call of whatever */}
         <GridItem>
-          <Card width={"350px"}>
+          <Card width={"350px"} bgColor={theme.colors.bg3}>
             <CardBody
               style={{
                 display: "flex",
@@ -64,7 +64,12 @@ function Projects() {
                 alignItems: "center",
               }}
             >
-              <Image src={callof} width={"100%"} height={"200px"} />
+              <Image
+                src={callof}
+                width={"100%"}
+                height={"200px"}
+                border={"solid 1px black"}
+              />
               <Text
                 marginTop={25}
                 fontWeight={theme.fontWeights.bold}
@@ -88,7 +93,7 @@ function Projects() {
               <ModalHeader>Call of Whatever</ModalHeader>
               <ModalCloseButton />
               <ModalBody>
-                <Image src={callof} />
+                <Image src={callof} border={"solid 1px black"} />
                 <Text marginTop={25}>
                   A mini game using pure JavaScript, a little of bit of css to
                   principal menu using Less. Made just to practive classes and
@@ -108,7 +113,7 @@ function Projects() {
         </GridItem>
         {/* Pi */}
         <GridItem>
-          <Card width={"350px"}>
+          <Card width={"350px"} bgColor={theme.colors.bg3}>
             <CardBody
               style={{
                 display: "flex",
@@ -117,7 +122,12 @@ function Projects() {
                 alignItems: "center",
               }}
             >
-              <Image src={videogames} width={"100%"} height={"200px"} />
+              <Image
+                src={videogames}
+                width={"100%"}
+                height={"200px"}
+                border={"solid 1px black"}
+              />
               <Text
                 marginTop={25}
                 fontWeight={theme.fontWeights.bold}
@@ -141,7 +151,7 @@ function Projects() {
               <ModalHeader>PI-VideoGames</ModalHeader>
               <ModalCloseButton />
               <ModalBody>
-                <Image src={videogames} />
+                <Image src={videogames} border={"solid 1px black"} />
                 <Text marginTop={25}>
                   This is a Crud App made for the Individual Project at the
                   bootcamp of FullStack Developer in SoyHenry. It was made with
@@ -162,8 +172,9 @@ function Projects() {
             </ModalContent>
           </Modal>
         </GridItem>
+        {/* PF */}
         <GridItem>
-          <Card width={"350px"}>
+          <Card width={"350px"} bgColor={theme.colors.bg3}>
             <CardBody
               style={{
                 display: "flex",
@@ -172,7 +183,12 @@ function Projects() {
                 alignItems: "center",
               }}
             >
-              <Image src={books} width={"100%"} height={"200px"} />
+              <Image
+                src={books}
+                width={"100%"}
+                height={"200px"}
+                border={"solid 1px black"}
+              />
               <Text
                 marginTop={25}
                 fontWeight={theme.fontWeights.bold}
@@ -196,7 +212,7 @@ function Projects() {
               <ModalHeader>Book's kingdom</ModalHeader>
               <ModalCloseButton />
               <ModalBody>
-                <Image src={books} />
+                <Image src={books} border={"solid 1px black"} />
                 <Text marginTop={25}>
                   This is a e-commerce made for the final project of soyHenry
                   bootcamp. In this one, it was made with another six partners.
@@ -205,17 +221,27 @@ function Projects() {
                   the front-end use Material Ui for styling, NodeMailer for the
                   mailing and finally import redux Toolkit for global states.
                   Team Members:
-                  <br/>
-                  <Link href="https://github.com/fr0st1987">Joaquin Oliveira</Link>
-                  <br/>
-                  <Link href="https://github.com/jgiampe">Julian Giampetruzi</Link>
-                  <br/>
-                  <Link href="https://github.com/Alfredocgn">Alfredo Gonzalez</Link>
-                  <br/>
-                  <Link href="https://github.com/MLSalerno">Mauricio Salerno</Link>
-                  <br/>
-                  <Link href="https://github.com/ClaPeralta">Claudio Peralta</Link>
-                  <br/>
+                  <br />
+                  <Link href="https://github.com/fr0st1987">
+                    Joaquin Oliveira
+                  </Link>
+                  <br />
+                  <Link href="https://github.com/jgiampe">
+                    Julian Giampetruzi
+                  </Link>
+                  <br />
+                  <Link href="https://github.com/Alfredocgn">
+                    Alfredo Gonzalez
+                  </Link>
+                  <br />
+                  <Link href="https://github.com/MLSalerno">
+                    Mauricio Salerno
+                  </Link>
+                  <br />
+                  <Link href="https://github.com/ClaPeralta">
+                    Claudio Peralta
+                  </Link>
+                  <br />
                   <Link href="https://github.com/mmitacc">Manuel Mittac</Link>
                 </Text>
                 <ModalFooter justifyContent={"center"}>
