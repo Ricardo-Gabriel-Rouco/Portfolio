@@ -8,6 +8,7 @@ import {
   CardBody,
   Image,
   Text,
+  Flex,
   Grid,
   GridItem,
   useDisclosure,
@@ -18,7 +19,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import {Link as reactLink} from 'react-router-dom'
+import { Link as reactLink } from "react-router-dom";
 import { GoHome } from "react-icons/go";
 import image from "../../assets/gabrielRouco.jpg";
 import theme from "../../theme";
@@ -50,20 +51,27 @@ function AboutMe() {
       }}
       gap={3}
       alignItems="center"
-    > 
-    <Box position="absolute" top={0} left={0} padding={30} marginLeft={30}>
-        <Link as={reactLink} to={"/"} fontSize={theme.fontSizes.xxl} color={theme.fontColors.primary}>
+    >
+      <Box position="absolute" top={0} left={0} padding={30} marginLeft={30}>
+        <Link
+          as={reactLink}
+          to={"/"}
+          fontSize={theme.fontSizes.xxl}
+          color={theme.fontColors.primary}
+        >
           <Icon as={GoHome} />
           Home
         </Link>
       </Box>
       <GridItem
         maxW="50%"
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems={"center"}
-        marginLeft={300}
+        display={"flex"}
+        flexDirection={"column"}
+        alignContent={"center"}
+        color={theme.fontColors.primary}
+        justifyContent={{ base: "center", md: "flex-start" }} // centra verticalmente en pantallas pequeñas
+        gap={3} // aumenta o disminuye el espacio entre los elementos
+        margin={"0 auto"}
       >
         <Card maxW="sm" backgroundColor={theme.colors.bg3} marginRight={20}>
           <CardBody
@@ -90,70 +98,72 @@ function AboutMe() {
         maxW="50%"
         display={"flex"}
         flexDirection={"column"}
-        justifyContent="center"
         alignContent={"center"}
         color={theme.fontColors.primary}
-        marginLeft={100}
+        justifyContent={{ base: "center", md: "flex-start" }} // centra verticalmente en pantallas pequeñas
+        gap={3} // aumenta o disminuye el espacio entre los elementos
       >
         <Text fontSize={theme.fontSizes.xxl}>Tech Abilities</Text>
         <Box>
-        <Text fontSize={theme.fontSizes.xl} marginTop={10}>
-          Front-end
-        </Text>
-        {/* <Text>JavaScript</Text>
-        <Text>React Js</Text>
-        <Text>Redux</Text> */}
-        <Button
-          onClick={onFrontOpen}
-          marginTop={25}
-          style={{ alignSelf: "center" }}
-        >
-          View More
-        </Button>
-        <Modal isOpen={isFrontOpen} onClose={onFrontClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Front-End Skills</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <Text>JavaScript</Text>
-              <Text>React Js</Text>
-              <Text>Redux</Text>
-              <Text>HTML</Text>
-              <Text>CSS</Text>
-              <Text>Material UI</Text>
-              <Text>Chakra UI</Text>
-            </ModalBody>
-          </ModalContent>
-        </Modal>
-        <Text fontSize={theme.fontSizes.xl} marginTop={10}>
-          Back-end
-        </Text>
-        {/* <Text>Sequelize</Text>
-        <Text>Postgre SQL</Text>
-        <Text>Express</Text> */}
-        <Button
-          onClick={onBackOpen}
-          marginTop={25}
-          style={{ alignSelf: "center" }}
-        >
-          View More
-        </Button>
-        <Modal isOpen={isBackOpen} onClose={onBackClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Back-End Skills</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <Text>Sequelize</Text>
-              <Text>Postgre SQL</Text>
-              <Text>Express</Text>
-              <Text>Python</Text>
-              <Text>Django</Text>
-              <Text>Microsoft SQL server</Text>
-            </ModalBody>
-          </ModalContent>
-        </Modal>
+          <Flex flexDirection="row" alignItems="center">
+            <Flex flexDirection={"column"}>
+              <Text fontSize={theme.fontSizes.xl} marginTop={10}>
+                Front-end
+              </Text>
+              <Button
+                onClick={onFrontOpen}
+                marginTop={25}
+                style={{ alignSelf: "center" }}
+                color={'black'}
+              >
+                View More
+              </Button>
+            </Flex>
+            <Modal isOpen={isFrontOpen} onClose={onFrontClose}>
+              <ModalOverlay />
+              <ModalContent>
+                <ModalHeader>Front-End Skills</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                  <Text>JavaScript</Text>
+                  <Text>React Js</Text>
+                  <Text>Redux</Text>
+                  <Text>HTML</Text>
+                  <Text>CSS</Text>
+                  <Text>Material UI</Text>
+                  <Text>Chakra UI</Text>
+                </ModalBody>
+              </ModalContent>
+            </Modal>
+            <Flex flexDirection={'column'} marginLeft={20}>
+            <Text fontSize={theme.fontSizes.xl} marginTop={10}>
+              Back-end
+            </Text>
+            <Button
+              onClick={onBackOpen}
+              marginTop={25}
+              style={{ alignSelf: "center" }}
+              color={'black'}
+            >
+              View More
+            </Button>
+            </Flex>
+            <Modal isOpen={isBackOpen} onClose={onBackClose}>
+              <ModalOverlay />
+              <ModalContent>
+                <ModalHeader>Back-End Skills</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                  <Text>Sequelize</Text>
+                  <Text>Postgre SQL</Text>
+                  <Text>Express</Text>
+                  <Text>Python</Text>
+                  <Text>Django</Text>
+                  <Text>Microsoft SQL server</Text>
+                </ModalBody>
+              </ModalContent>
+            </Modal>
+          </Flex>
         </Box>
       </GridItem>
     </Grid>
