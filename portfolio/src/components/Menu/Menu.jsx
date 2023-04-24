@@ -22,7 +22,7 @@ const MainMenu = () => {
         as={routerlink}
         to="/projects"
       >
-        {/* listado de proyectos con sus respectivos links a github, call of whatever, rick and morty, pi, pf y pi mejorandose (no olvidarse de aclarar) */}
+        {/* listado de proyectos con sus respectivos links a github, call of whatever, pi, pf y pi mejorandose (no olvidarse de aclarar) */}
         <Icon as={GoProject} marginRight={"10px"} />
         Projects
       </Link>
