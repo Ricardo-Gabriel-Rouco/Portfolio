@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "../src/Views/Landing";
+import AboutMe from "./components/AboutMe/AboutMe";
 import { theme } from "./theme";
 import Projects from "./components/Projects/Projects";
 
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Landing />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<AboutMe/>}/>
           </Routes>
         </Box>
       </Box>

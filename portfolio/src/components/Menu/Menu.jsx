@@ -21,6 +21,8 @@ const MainMenu = () => {
         color={theme.fontColors.primary}
         marginBottom={"2rem"}
         fontSize={theme.fontSizes.xxl}
+        as={routerlink}
+        to={'/about'}
       >
         {/* aca pondre una suerte de CV con tecnologias, algunos datos personales y va ir mi foto de la landing */}
         <Icon as={GoBriefcase} marginRight={"10px"} />
