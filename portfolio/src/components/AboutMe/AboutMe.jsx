@@ -1,6 +1,8 @@
 import React from "react";
 import {
   Box,
+  Link,
+  Icon,
   Button,
   Card,
   CardBody,
@@ -13,10 +15,11 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
+import {Link as reactLink} from 'react-router-dom'
+import { GoHome } from "react-icons/go";
 import image from "../../assets/gabrielRouco.jpg";
 import theme from "../../theme";
 
@@ -47,7 +50,13 @@ function AboutMe() {
       }}
       gap={3}
       alignItems="center"
-    >
+    > 
+    <Box position="absolute" top={0} left={0} padding={30} marginLeft={30}>
+        <Link as={reactLink} to={"/"} fontSize={theme.fontSizes.xxl} color={theme.fontColors.primary}>
+          <Icon as={GoHome} />
+          Home
+        </Link>
+      </Box>
       <GridItem
         maxW="50%"
         display="flex"
