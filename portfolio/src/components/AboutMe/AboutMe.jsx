@@ -35,11 +35,7 @@ function AboutMe() {
     onOpen: onBackOpen,
     onClose: onBackClose,
   } = useDisclosure();
-  const {
-    isOpen: isSoftOpen,
-    onOpen: onSoftOpen,
-    onClose: onSoftClose,
-  } = useDisclosure();
+
 
   return (
     <Grid
@@ -103,18 +99,24 @@ function AboutMe() {
         justifyContent={{ base: "center", md: "flex-start" }} // centra verticalmente en pantallas pequeñas
         gap={3} // aumenta o disminuye el espacio entre los elementos
       >
-        <Text fontSize={theme.fontSizes.xxl}>Tech Abilities</Text>
+        <Box>
+          <Text fontSize={theme.fontSizes.xxl}>How am I?</Text>
+          <Text marginTop={8}>A web developer with experience in Javascript. Actually living with my girlfriend and two cats.
+            I´m always looking for new knowledge, very proactive and very passionate for tecnology
+          </Text>
+        </Box>
+        <Text fontSize={theme.fontSizes.xxl} margin={6}>Tech Abilities</Text>
         <Box>
           <Flex flexDirection="row" alignItems="center">
             <Flex flexDirection={"column"}>
-              <Text fontSize={theme.fontSizes.xl} marginTop={10}>
+              <Text fontSize={theme.fontSizes.xl} marginTop={6}>
                 Front-end
               </Text>
               <Button
                 onClick={onFrontOpen}
                 marginTop={25}
                 style={{ alignSelf: "center" }}
-                color={'black'}
+                color={"black"}
               >
                 View More
               </Button>
@@ -135,18 +137,18 @@ function AboutMe() {
                 </ModalBody>
               </ModalContent>
             </Modal>
-            <Flex flexDirection={'column'} marginLeft={20}>
-            <Text fontSize={theme.fontSizes.xl} marginTop={10}>
-              Back-end
-            </Text>
-            <Button
-              onClick={onBackOpen}
-              marginTop={25}
-              style={{ alignSelf: "center" }}
-              color={'black'}
-            >
-              View More
-            </Button>
+            <Flex flexDirection={"column"} marginLeft={20}>
+              <Text fontSize={theme.fontSizes.xl} marginTop={6}>
+                Back-end
+              </Text>
+              <Button
+                onClick={onBackOpen}
+                marginTop={25}
+                style={{ alignSelf: "center" }}
+                color={"black"}
+              >
+                View More
+              </Button>
             </Flex>
             <Modal isOpen={isBackOpen} onClose={onBackClose}>
               <ModalOverlay />
