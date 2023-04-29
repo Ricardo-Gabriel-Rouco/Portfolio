@@ -32,6 +32,8 @@ const MainMenu = () => {
         color={theme.fontColors.primary}
         marginBottom={"2rem"}
         fontSize={theme.fontSizes.xxl}
+        as={routerlink}
+        to={'/contact'}
       >
         {/* aca va air formulario de contacto via mail, ver email.js */}
         <Icon as={GoMention} marginRight={"10px"} />

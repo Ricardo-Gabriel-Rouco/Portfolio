@@ -4,6 +4,7 @@ import Landing from "../src/Views/Landing";
 import AboutMe from "./components/AboutMe/AboutMe";
 import { theme } from "./theme";
 import Projects from "./components/Projects/Projects";
+import ContactMe from "./components/ContactMe/ContactMe";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/" element={<Landing />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<AboutMe/>}/>
+            <Route path="/contact" element={<ContactMe/>}/>
           </Routes>
         </Box>
       </Box>
