@@ -5,8 +5,12 @@ import AboutMe from "./components/AboutMe/AboutMe";
 import { theme } from "./theme";
 import Projects from "./components/Projects/Projects";
 import ContactMe from "./components/ContactMe/ContactMe";
+import axios from 'axios'
+
+axios.defaults.baseURL = 'https://api.github.com/users/ricardo-gabriel-rouco'
 
 function App() {
+
   return (
     <BrowserRouter>
       <Box
