@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link as routerLink } from "react-router-dom";
 import theme from "../../theme";
 import { ImWhatsapp, ImLinkedin } from "react-icons/im";
-import { GoHome, GoMarkGithub, GoMail } from "react-icons/go";
+import { GoHome, GoMarkGithub } from "react-icons/go";
 import { BsSend } from "react-icons/bs";
 import {
   Box,
@@ -19,7 +19,7 @@ import {
   Textarea,
   Flex,
 } from "@chakra-ui/react";
-
+import { sendEmail } from "./sender";
 import qr from "../../assets/qrwhatsapp.png";
 
 function ContactMe() {
@@ -27,14 +27,28 @@ function ContactMe() {
     subject: "",
     from: "",
     message: "",
+    fromName: "",
   });
 
   const handleInputChange = (e) => {
-    setMailData({...mailData, [e.target.name] : [e.target.value]})
+    setMailData({ ...mailData, [e.target.name]: [e.target.value] });
   };
 
-  const handleSubmit = () => {
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await sendEmail(mailData);
+      alert("Email Sent");
+      // setMailData({
+      //   subject: "",
+      //   from: "",
+      //   message: "",
+      //   fromName: "",
+      // });
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -47,7 +61,6 @@ function ContactMe() {
       }}
       gap={3}
       alignItems="center"
-
     >
       {/* https://wa.me/5493484380831 */}
       <Box position="absolute" top={0} left={0} padding={30} marginLeft={30}>
@@ -80,17 +93,25 @@ function ContactMe() {
             <form onSubmit={handleSubmit}>
               <Input
                 size={"sm"}
-                htmlSize={3}
+                width={250}
+                variant={"filled"}
+                placeholder="Your name. ex: John Doe"
+                value={mailData.fromName}
+                onChange={handleInputChange}
+                name="fromName"
+              />
+              <Input
+                size={"sm"}
                 width={250}
                 variant={"filled"}
                 placeholder="Your email. ex: r.g.rouco1@gmail.com"
                 value={mailData.from}
                 onChange={handleInputChange}
+                marginTop={5}
                 name="from"
               />
               <Input
                 size={"sm"}
-                htmlSize={3}
                 width={250}
                 variant={"filled"}
                 marginTop={5}
@@ -101,7 +122,6 @@ function ContactMe() {
               />
               <Textarea
                 size={"sm"}
-                htmlSize={3}
                 width={250}
                 variant={"filled"}
                 marginTop={5}
