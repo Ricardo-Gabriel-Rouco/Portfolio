@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link as routerLink } from "react-router-dom";
 import theme from "../../theme";
 import { ImWhatsapp, ImLinkedin } from "react-icons/im";
-import { GoHome, GoMarkGithub } from "react-icons/go";
+import { GoHome, GoMarkGithub, GoMail } from "react-icons/go";
 import { BsSend } from "react-icons/bs";
 import {
   Box,
@@ -18,17 +18,22 @@ import {
   Input,
   Textarea,
   Flex,
+  useToast
 } from "@chakra-ui/react";
 import { sendEmail } from "./sender";
 import qr from "../../assets/qrwhatsapp.png";
 
 function ContactMe() {
+
+  const toast = useToast()
+
   const [mailData, setMailData] = useState({
     subject: "",
     from: "",
     message: "",
     fromName: "",
   });
+
 
   const handleInputChange = (e) => {
     setMailData({ ...mailData, [e.target.name]: [e.target.value] });
@@ -37,21 +42,28 @@ function ContactMe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const result = await sendEmail(mailData);
-      alert("Email Sent");
-      // setMailData({
-      //   subject: "",
-      //   from: "",
-      //   message: "",
-      //   fromName: "",
-      // });
-      console.log(result);
+      await sendEmail(mailData);
+      toast({
+        title: 'E-mail sent.',
+        description: "Your message have been sent.",
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+        position: 'top',
+      })
+      setMailData({
+        subject: "",
+        from: "",
+        message: "",
+        fromName: "",
+      });
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
+    
     <Grid
       height="100vh"
       templateColumns={{
@@ -62,6 +74,7 @@ function ContactMe() {
       gap={3}
       alignItems="center"
     >
+      
       {/* https://wa.me/5493484380831 */}
       <Box position="absolute" top={0} left={0} padding={30} marginLeft={30}>
         <Link
