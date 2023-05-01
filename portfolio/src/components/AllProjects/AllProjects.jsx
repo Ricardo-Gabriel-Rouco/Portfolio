@@ -18,36 +18,40 @@ import {
   Td,
   TableContainer,
   Tooltip,
+  useToast,
   Flex,
 } from "@chakra-ui/react";
 
 function AllProjects() {
-  const accessToken = import.meta.env.VITE_GITHUB_API;
 
   const [allRepos, setAllRepos] = useState([]);
+  const toast = useToast();
 
   function handleCopy(text) {
     navigator.clipboard
       .writeText(text)
       .then(() => {
         console.log(`Copied to clipboard: ${text}`);
+        toast({
+          title: "Copied to clipboard",
+          description: "You can clone the repo",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+          position: "top",
+        });
       })
       .catch((err) => {
         console.error(`Error copying to clipboard: ${err}`);
       });
   }
 
-  const config = {
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-    },
-  };
 
   useEffect(() => {
     const fetchRepos = async () => {
       const repos = await axios.get(
-        "https://api.github.com/users/ricardo-gabriel-rouco/repos",
-        config
+        "https://api.github.com/users/ricardo-gabriel-rouco/repos"
+        
       );
       setAllRepos(repos.data);
     };
@@ -57,12 +61,17 @@ function AllProjects() {
   return (
     <Flex justifyContent={"center"}>
       <Box position="absolute" top={0} left={0} padding={30} marginLeft={30}>
-        <Link as={reactLink} to={"/projects"} fontSize={theme.fontSizes.xxl} color={theme.fontColors.primary}>
-          <Icon as={GoProject} mr={2}/>
+        <Link
+          as={reactLink}
+          to={"/projects"}
+          fontSize={theme.fontSizes.xxl}
+          color={theme.fontColors.primary}
+        >
+          <Icon as={GoProject} mr={2} />
           Projects
         </Link>
       </Box>
-      <Card w={"80%"} backgroundColor={theme.colors.bg3} mt={'8%'}>
+      <Card w={"80%"} backgroundColor={theme.colors.bg3} mt={"8%"}>
         <CardBody>
           <TableContainer maxW="100%" whiteSpace={"nowrap"}>
             <Table size="sm" p={0}>

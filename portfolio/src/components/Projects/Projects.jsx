@@ -47,9 +47,24 @@ function Projects() {
   return (
     <Flex height="100vh" justifyContent="space-evenly" alignItems="center">
       <Box position="absolute" top={0} left={0} padding={30} marginLeft={30}>
-        <Link as={reactLink} to={"/"} fontSize={theme.fontSizes.xxl} color={theme.fontColors.primary}>
+        <Link
+          as={reactLink}
+          to={"/"}
+          fontSize={theme.fontSizes.xxl}
+          color={theme.fontColors.primary}
+        >
           <Icon as={GoHome} />
           Home
+        </Link>
+      </Box>
+      <Box position="absolute" top={0} right={0} padding={30} marginRight={30}>
+        <Link
+          as={reactLink}
+          to="/all"
+          fontSize={theme.fontSizes.xxl}
+          color={theme.fontColors.primary}
+        >
+          All Projects
         </Link>
       </Box>
       <Grid
@@ -265,7 +280,6 @@ function Projects() {
           </Modal>
         </GridItem>
       </Grid>
-      <Link as={reactLink} to='/all'>All Projects</Link>
     </Flex>
   );
 }
