@@ -265,6 +265,7 @@ function Projects() {
           </Modal>
         </GridItem>
       </Grid>
+      <Link as={reactLink} to='/all'>All Projects</Link>
     </Flex>
   );
 }

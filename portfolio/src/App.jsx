@@ -5,9 +5,8 @@ import AboutMe from "./components/AboutMe/AboutMe";
 import { theme } from "./theme";
 import Projects from "./components/Projects/Projects";
 import ContactMe from "./components/ContactMe/ContactMe";
-import axios from 'axios'
+import AllProjects from "./components/AllProjects/AllProjects";
 
-axios.defaults.baseURL = 'https://api.github.com/users/ricardo-gabriel-rouco'
 
 function App() {
 
@@ -26,6 +25,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<AboutMe/>}/>
             <Route path="/contact" element={<ContactMe/>}/>
+            <Route path="/all" element={<AllProjects/>}/>
           </Routes>
         </Box>
       </Box>
