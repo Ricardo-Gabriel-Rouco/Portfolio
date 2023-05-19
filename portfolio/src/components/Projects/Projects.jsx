@@ -45,39 +45,52 @@ function Projects() {
     onClose: closeBooks,
   } = useDisclosure();
   return (
-    <Flex height="100vh" justifyContent="space-evenly" alignItems="center">
-      <Box position="absolute" top={0} left={0} padding={30} marginLeft={30}>
-        <Link
-          as={reactLink}
-          to={"/"}
-          fontSize={theme.fontSizes.xxl}
-          color={theme.fontColors.primary}
+    <>
+      <Flex justifyContent="space-around" alignItems="center" marginTop={'0.3rem'} marginBottom={'7rem'}>
+        <Box
+          top={0}
+          left={0}
+          // padding={30}
         >
-          <Icon as={GoHome} />
-          Home
-        </Link>
-      </Box>
-      <Box position="absolute" top={0} right={0} padding={30} marginRight={30}>
-        <Link
-          as={reactLink}
-          to="/all"
-          fontSize={theme.fontSizes.xxl}
-          color={theme.fontColors.primary}
-        >
-          All Projects
-        </Link>
-      </Box>
+          <Link
+            as={reactLink}
+            to={"/"}
+            fontSize={theme.fontSizes.xxl}
+            color={theme.fontColors.primary}
+          >
+            <Icon as={GoHome} />
+            Home
+          </Link>
+        </Box>
+        <Box>
+          <Link
+            as={reactLink}
+            to="/all"
+            fontSize={theme.fontSizes.xxl}
+            color={theme.fontColors.primary}
+          >
+            All Projects
+          </Link>
+        </Box>
+      </Flex>
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
           sm: "repeat(2, 1fr)",
-          md: "repeat(3, 1fr)",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+          xl: "repeat(3, 1fr)",
+          '2xl': "repeat(4, 1fr)",
+          
         }}
         gap={2}
         flexWrap="wrap"
       >
         {/* Call of whatever */}
-        <GridItem>
+        <GridItem style={{
+                display: "flex",
+                justifyContent: "center",
+              }}>
           <Card width={"350px"} bgColor={theme.colors.bg3}>
             <CardBody
               style={{
@@ -135,7 +148,10 @@ function Projects() {
           </Modal>
         </GridItem>
         {/* Pi */}
-        <GridItem>
+        <GridItem style={{
+                display: "flex",
+                justifyContent: "center",
+              }}>
           <Card width={"350px"} bgColor={theme.colors.bg3}>
             <CardBody
               style={{
@@ -194,9 +210,12 @@ function Projects() {
               </ModalBody>
             </ModalContent>
           </Modal>
-        </GridItem>
+        </GridItem >
         {/* PF */}
-        <GridItem>
+        <GridItem style={{
+                display: "flex",
+                justifyContent: "center",
+              }}>
           <Card width={"350px"} bgColor={theme.colors.bg3}>
             <CardBody
               style={{
@@ -280,7 +299,7 @@ function Projects() {
           </Modal>
         </GridItem>
       </Grid>
-    </Flex>
+    </>
   );
 }
 
