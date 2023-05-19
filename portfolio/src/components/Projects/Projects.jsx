@@ -1,5 +1,5 @@
 import React from "react";
-import { GoMarkGithub, GoHome } from "react-icons/go";
+import { GoMarkGithub, GoHome, GoOctoface } from "react-icons/go";
 import { SiVercel } from "react-icons/si";
 import {
   Box,
@@ -58,7 +58,7 @@ function Projects() {
             fontSize={theme.fontSizes.xxl}
             color={theme.fontColors.primary}
           >
-            <Icon as={GoHome} />
+            <Icon as={GoHome} marginRight={3}/>
             Home
           </Link>
         </Box>
@@ -69,6 +69,7 @@ function Projects() {
             fontSize={theme.fontSizes.xxl}
             color={theme.fontColors.primary}
           >
+          <Icon as={GoOctoface} marginRight={3}/>
             All Projects
           </Link>
         </Box>
@@ -83,7 +84,8 @@ function Projects() {
           '2xl': "repeat(4, 1fr)",
           
         }}
-        gap={2}
+        gridRowGap={3}
+        gridColumnGap={3}
         flexWrap="wrap"
       >
         {/* Call of whatever */}
