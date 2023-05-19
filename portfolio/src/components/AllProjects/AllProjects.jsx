@@ -59,8 +59,9 @@ function AllProjects() {
   }, []);
 
   return (
-    <Flex justifyContent={"center"}>
-      <Box position="absolute" top={0} left={0} padding={30} marginLeft={30}>
+    <>
+    <Flex justifyContent={"center"} alignItems={'center'} flexDirection={'column'}>
+      <Box >
         <Link
           as={reactLink}
           to={"/projects"}
@@ -71,7 +72,7 @@ function AllProjects() {
           Projects
         </Link>
       </Box>
-      <Card w={"80%"} backgroundColor={theme.colors.bg3} mt={"8%"}>
+      <Card w={"80%"} backgroundColor={theme.colors.bg3} mt={"1.9rem"}>
         <CardBody>
           <TableContainer maxW="100%" whiteSpace={"nowrap"}>
             <Table size="sm" p={0}>
@@ -107,6 +108,7 @@ function AllProjects() {
         </CardBody>
       </Card>
     </Flex>
+    </>
   );
 }
 
