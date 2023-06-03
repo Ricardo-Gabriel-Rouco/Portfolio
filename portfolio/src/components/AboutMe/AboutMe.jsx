@@ -21,6 +21,7 @@ import {
 } from "@chakra-ui/react";
 import { Link as reactLink } from "react-router-dom";
 import { GoHome } from "react-icons/go";
+import { AiOutlineDownload } from "react-icons/ai";
 import image from "../../assets/gabrielRouco.jpg";
 import theme from "../../theme";
 
@@ -117,11 +118,12 @@ function AboutMe() {
               </Text>
               <Button
                 onClick={handleDownload}
-                marginTop={25}
                 style={{ alignSelf: "center" }}
                 color={"black"}
+                
               >
-                Download my CV
+                CV 
+                <Icon as={AiOutlineDownload} w={6} h={6} marginLeft={'0.5rem'}/>
               </Button>
             </CardBody>
           </Card>
