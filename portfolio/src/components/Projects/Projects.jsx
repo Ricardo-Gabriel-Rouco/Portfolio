@@ -82,7 +82,6 @@ function Projects() {
           lg: "repeat(3, 1fr)",
           xl: "repeat(3, 1fr)",
           '2xl': "repeat(4, 1fr)",
-          
         }}
         gridRowGap={3}
         gridColumnGap={3}
