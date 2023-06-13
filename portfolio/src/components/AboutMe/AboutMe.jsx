@@ -18,7 +18,9 @@ import {
   ModalHeader,
   ModalBody,
   ModalCloseButton,
+  Tooltip
 } from "@chakra-ui/react";
+import TruncatedText from "../TruncatedText/TruncatedText";
 import { Link as reactLink } from "react-router-dom";
 import { GoHome } from "react-icons/go";
 import { AiOutlineDownload } from "react-icons/ai";
@@ -36,6 +38,8 @@ function AboutMe() {
     onOpen: onBackOpen,
     onClose: onBackClose,
   } = useDisclosure();
+
+  const maxLength = 137
 
   const handleDownload = () => {
     const fileUrl = "../../assets/CV Gabriel Rouco.pdf"; // Reemplaza esto con la URL del archivo que deseas descargar
@@ -88,12 +92,12 @@ function AboutMe() {
           flexDirection={"column"}
           alignContent={"center"}
           marginLeft={"20%"}
-          justifyContent={"center"}
+          justifyContent={"flex-start"}
           color={theme.fontColors.primary}
           // justifyContent={{ base: "center", md: "flex-start" }} // centra verticalmente en pantallas pequeñas
           // margin={"0 auto"}
         >
-          <Card maxW="sm" backgroundColor={theme.colors.bg3} marginRight={20}>
+          <Card maxW="sm" backgroundColor={theme.colors.bg3} marginRight={10}>
             <CardBody
               paddingTop={"1rem"}
               paddingBottom={"1rem"}
@@ -116,6 +120,7 @@ function AboutMe() {
               >
                 Gabriel Rouco
               </Text>
+              <Tooltip label='Download CV'>
               <Button
                 onClick={handleDownload}
                 style={{ alignSelf: "center" }}
@@ -125,6 +130,7 @@ function AboutMe() {
                 CV 
                 <Icon as={AiOutlineDownload} w={6} h={6} marginLeft={'0.5rem'}/>
               </Button>
+              </Tooltip>
             </CardBody>
           </Card>
         </GridItem>
@@ -139,11 +145,8 @@ function AboutMe() {
         >
           <Box>
             <Text fontSize={theme.fontSizes.xxl}>How am I?</Text>
-            <Text marginTop={8}>
-              A web developer with experience in Javascript. Actually living
-              with my girlfriend and two cats.
-              <br></br>I´m always looking for new knowledge, very proactive and
-              very passionate for tecnology
+            <Text fontSize={theme.fontSizes.md} marginTop={6} overflowX={'hidden'}>
+              <TruncatedText/>
             </Text>
           </Box>
           <Text fontSize={theme.fontSizes.xxl} marginTop={6}>
